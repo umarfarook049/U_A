@@ -1,0 +1,134 @@
+<!-- html  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A special proposal for someone very special.">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Our Love Story</h1>
+        </header>
+
+        <!-- Main Section -->
+        <main class="main-content">
+            <!-- Left Section: Girlfriend's Image -->
+            <div class="left-section">
+                <img src="girlfriend.jpg" alt="Her Beautiful Smile" class="image-large" id="girlfriend-img">
+            </div>
+
+            <!-- Right Section: Romantic Quote -->
+            <div class="right-section">
+                <div class="quote">
+                    <p id="animated-quote">"When I look into your eyes, I see the promise of a lifetime of love and happiness."</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>Looking forward to a lifetime together ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- css  -->
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffe0e9, #ffc1c9);
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #ff6f91;
+    margin: 20px 0;
+    text-align: center;
+    text-shadow: 2px 2px #ffbbcc;
+}
+
+/* Main content layout */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+/* Left section styling */
+.left-section {
+    flex: 1;
+    text-align: center;
+}
+
+.image-large {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Right section styling */
+.right-section {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.quote p {
+    font-size: 1.8em;
+    color: #ff6f91;
+    margin: 0;
+    font-style: italic;
+    border-left: 5px solid #ff6f91;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 5s steps(40, end) 1s forwards;
+}
+
+/* Typing animation for the quote */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+footer p {
+    font-size: 1.2em;
+    color: #ff6f91;
+    margin: 50px 0 20px 0;
+    text-align: center;
+    text-shadow: 1px 1px #ffbbcc;
+}
+
+<!-- js  -->
+
+// Optional: You can add more interactive features using JavaScript.
+document.addEventListener("DOMContentLoaded", () => {
+    const girlfriendImage = document.getElementById("girlfriend-img");
+
+    // Fade-in effect for girlfriend's image
+    girlfriendImage.style.opacity = 0;
+    setTimeout(() => {
+        girlfriendImage.style.transition = "opacity 2s";
+        girlfriendImage.style.opacity = 1;
+    }, 500);
+});
