@@ -46,7 +46,7 @@ nav p {
 }
 
 .image-section {
-    margin: 200px 0;
+    margin: 130px 0;
 }
 
 .image-large {
@@ -127,3 +127,80 @@ footer p {
         margin-left: 0rem;
     }
 }
+
+
+/* hearts with quote  */
+
+.heart-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: pink;
+    transform: rotate(45deg);
+    animation: fall 5s linear infinite;
+    opacity: 0.8;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: pink;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -7.5px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 7.5px;
+    top: 0;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -10%;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      top: 110%;
+      opacity: 0;
+    }
+  }
+  
+  #quote {
+    display: inline;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #quote::after {
+    content: ""; /* Empty content for cursor effect */
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #ff6b81;
+    animation: blink-caret 0.7s step-end infinite;
+  }
+  
+  
+  @keyframes blink-caret {
+    50% {
+      opacity: 0;
+    }
+  }

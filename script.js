@@ -20,3 +20,36 @@ document.addEventListener("DOMContentLoaded", () => {
         girlfriendImage.style.opacity = 1;
     }, 500);
 });
+
+// qoute 
+// JavaScript for Hearts Rain Effect
+const heartContainer = document.querySelector(".heart-container");
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+  heartContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 5000);
+}
+
+setInterval(createHeart, 300);
+
+// JavaScript for Typing Animation
+const quoteText = "Love is not just looking at each other, it's looking in the same direction.";
+let index = 0;
+
+function typeQuote() {
+  if (index < quoteText.length) {
+    document.getElementById("quote").innerHTML += quoteText.charAt(index);
+    index++;
+    setTimeout(typeQuote, 100); // Adjust speed here
+  }
+}
+
+window.onload = typeQuote;
+
